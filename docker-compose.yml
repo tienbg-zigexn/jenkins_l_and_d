@@ -14,7 +14,7 @@ services:
     build:
       context: rockylinux10
     volumes:
-      - $PWD/backup_db_cloudinary.sh:/tmp/backup_db.sh
+      - $PWD/scripts:/tmp/scripts
     networks:
       - net
   db_host:
