@@ -1,6 +1,6 @@
 FROM remote-host
 
-RUN yum install -y nginx php-fpm php-mysqlnd
+RUN yum install -y nginx php-fpm php-mysqlnd && yum clean all
 
 EXPOSE 80 443
 
