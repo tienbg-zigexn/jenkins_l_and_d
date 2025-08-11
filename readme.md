@@ -29,3 +29,8 @@ you're good to go.
 instead of install globally using pip. This is better but still, just use the
 debian package instead.
 - I hate incompetent.
+
+- nginx is a really popular piece of software, it is included in pretty much
+every linux distrubutions. Why do you have to add a repo in order to install
+it? At least, I don't have to. Since my rockylinux has it.
+- the same with php-fpm.
