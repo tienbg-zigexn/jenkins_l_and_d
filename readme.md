@@ -5,7 +5,7 @@ after.
 - actually, I'll include the old note here as well. [pre section 6
 note](/note_pre_section6.md)
 
-## ansible
+## ansible (section 6)
 
 - automation tool (leverage ssh and scripting).
 - this thing is written in python.
@@ -21,3 +21,11 @@ note](/note_pre_section6.md)
 - main feature of this tool is to make managing multiple machines easy.
 - help describe the whole infrastructure in yaml (supposedly to be both human
 and machine friendly).
+
+- I don't think install ansible using pip method as in the course is good. the
+jenkins image based on debian, so you can just `apt install ansible-core`, and
+you're good to go.
+- oh, they have a note says to use venv to create virtual env and install there
+instead of install globally using pip. this is better but still, just use the
+debian package instead.
+- I hate incompetent.
