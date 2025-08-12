@@ -62,3 +62,9 @@ host their own mail service.
 - I prefer to create my own smtp server for this course. It's not that hard,
 the only hardship is to make gmail not mark emails from my server as spams.
 - after setted up emails, you can have notifications about jobs now.
+
+## git (section 11)
+
+- pre questions:
+  - why gitlab? why not just open source tool like gitea or don't use frontend
+    at all?
