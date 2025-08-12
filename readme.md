@@ -52,3 +52,13 @@ BUILD_NUMBER. Ofc we can create out own global vairables.
 - in each job's configuration, we can config the build triggers. We can trigger
 a job in multiple ways, like a cronjob for example.
   - we can use api to trigger jobs, similar to google scheduler.
+
+## email (section 9)
+
+- basically add smtp information from email service provider and send email.
+- aws ses is acceptable, but gmail seems like a bad idea. Google mail service
+is the main service of Google, they are trying their best to prevent people
+host their own mail service.
+- I prefer to create my own smtp server for this course. It's not that hard,
+the only hardship is to make gmail not mark emails from my server as spams.
+- after setted up emails, you can have notifications about jobs now.
