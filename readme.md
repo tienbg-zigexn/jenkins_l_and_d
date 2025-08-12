@@ -44,6 +44,8 @@ weak. But I think the base security is pretty much enough for most users.
 see, I can understand aws and gcp better. Instead of letting amazon or google
 manage everything, we'll setup ourself.
 
+## tips & tricks (section 8)
+
 - jenkins has some default global variables to show information like
 BUILD_NUMBER. Ofc we can create out own global vairables.
 
