@@ -34,3 +34,19 @@ debian package instead.
 every linux distrubutions. Why do you have to add a repo in order to install
 it? At least, I don't have to. Since my rockylinux has it.
 - the same with php-fpm.
+
+## security (section 7)
+
+- even for security we have plugins. I thought jenkins would have to manage
+this aspect 100%. The course even states that jenkins' default security is
+weak. But I think the base security is pretty much enough for most users.
+- role-based authen plugin? to add the functionalities similar to aws IAM? I
+see, I can understand aws and gcp better. Instead of letting amazon or google
+manage everything, we'll setup ourself.
+
+- jenkins has some default global variables to show information like
+BUILD_NUMBER. Ofc we can create out own global vairables.
+
+- in each job's configuration, we can config the build triggers. We can trigger
+a job in multiple ways, like a cronjob for example.
+  - we can use api to trigger jobs, similar to google scheduler.
