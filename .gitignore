@@ -1,3 +1,10 @@
 db_data
-jenkins_home
+
+jenkins_home/*
+!jenkins_home/ansible/
+jenkins_home/ansible/*
+!jenkins_home/ansible/deploy.yml
+!jenkins_home/ansible/hosts
+!jenkins_home/ansible/workshop1/
+
 rockylinux10/remote-key*
