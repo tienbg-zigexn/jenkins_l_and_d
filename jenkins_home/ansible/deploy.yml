@@ -1,0 +1,13 @@
+- name: Workshop 1 - Deploy an application to multiple servers
+  hosts: "{{ TARGET_SERVERS | default(local) }}"
+  gather_facts: no
+  vars:
+    ansible_ssh_timeout: 30
+
+  tasks:
+    - name: Get server information
+      shell: 'printf "[INFO] %s\n" "uname: $(uname -a)" "hostname: $(hostname)"'
+      register: server_info
+    - name: Show server info
+      debug:
+        var: server_info.stdout_lines
