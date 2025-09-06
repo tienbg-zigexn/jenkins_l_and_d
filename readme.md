@@ -65,6 +65,27 @@ the only hardship is to make gmail not mark emails from my server as spams.
 
 ## git (section 11)
 
-- pre questions:
-  - why gitlab? why not just open source tool like gitea or don't use frontend
-    at all?
+Tasks:
+    1. Create git-server host in docker-compose file using gitlab.
+    2. Create git repo: (1) create group; (2) create repo.
+    3. Create a regular user.
+    4. Push something on the repo.
+
+You create git hook by ssh into the gitserver and create the script in the
+repo's directory? I don't think this is a good idea.
+
+## DSL (section 12)
+
+Tasks:
+    1. Install job dsl plugin.
+
+A job to manage multiple jobs in DSL style. DSL is good. Text is better than
+GUI.
+
+## CI/CD (section 13)
+
+- This section has nothing but some definitions of Continuous
+  Integration/Delivery/Deployment. I've read enough Redhat blogs about this
+  topic.
+
+## Jenkinsfile (section 14)
