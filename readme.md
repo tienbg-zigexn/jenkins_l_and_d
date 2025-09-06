@@ -89,3 +89,16 @@ GUI.
   topic.
 
 ## Jenkinsfile (section 14)
+
+This course introduced some tools with syntax: ansible, DSL plugins,
+jenkinsfile.
+
+Jenkinsfile: still a declarative language to declare pipelines. We have the
+concept of stages (e.g. build, test, deploy). Inside of a stage, we have
+multiple steps.
+
+Groovy: JVM based language. This thing helps make run scripts more declarative.
+And it also integrate better with jenkins, instead of running shell scripts. In
+order to write jenkins file, we use this language.
+
+Pipeline is also a plugin.
