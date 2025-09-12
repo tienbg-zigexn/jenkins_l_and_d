@@ -102,3 +102,15 @@ And it also integrate better with jenkins, instead of running shell scripts. In
 order to write jenkins file, we use this language.
 
 Pipeline is also a plugin.
+
+## Build Jenkinsfile with `real` steps (Section 15)
+
+Docker inside docker. We can use the docker inside a docker to control host's
+containers. The method is map the sock from host to the container containing
+the docker. :v Pretty funny but this method is discouraged now since we have
+more secure methods of doing this concept.
+
+We have kubernetes, external clusters and can use jenkins to manage them.
+
+Write scripts to automate everything, from create image to run container, and
+push to docker hub.
