@@ -114,3 +114,7 @@ We have kubernetes, external clusters and can use jenkins to manage them.
 
 Write scripts to automate everything, from create image to run container, and
 push to docker hub.
+
+We can use env variables in docker-compose.yml, just like a shell script.
+
+To automatically run CI/CD when push code: use git hooks.
