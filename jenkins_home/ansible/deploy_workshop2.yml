@@ -1,0 +1,68 @@
+- name: Workshop 2
+  hosts: "{{ TARGET_SERVERS | default(local) }}"
+  gather_facts: yes
+  vars:
+    ansible_ssh_timeout: 30
+    template_src: /var/jenkins_home/ansible/workshop2/public
+    target_dir: /usr/share/nginx/html/jenkins/tienbg2
+    current_dir: "{{ target_dir }}/current"
+    keep: "{{ KEEP | default(5) | int }}"
+    release_timestamp: "{{ ansible_date_time.iso8601_basic_short }}"
+    release_dir: "{{ target_dir }}/{{ release_timestamp }}"
+
+  tasks:
+    - name: Get servers information
+      shell: 'printf "[INFO] %s\n" "uname: $(uname -a)" "hostname: $(hostname)"'
+      register: server_info
+      changed_when: false
+
+    - name: Check nginx status
+      shell: |
+        if [ -f /usr/sbin/service ]; then
+          /usr/sbin/service nginx status
+        else
+          pstree | grep nginx || echo "nginx is not found in process tree"
+        fi
+      register: nginx_status
+      changed_when: false
+      failed_when: false
+
+    - name: Ensure target directories exist
+      shell: mkdir -p {{ target_dir }}
+
+    - name: Transfer files
+      copy:
+        src: "{{ template_src }}/"
+        dest: "{{ release_dir }}/"
+        mode: preserve
+
+    - name: Update symbolic link
+      file:
+        src: "{{ release_dir }}"
+        dest: "{{ current_dir }}"
+        state: link
+        force: yes
+
+    - name: Clean old releases
+      shell: |
+        existings="$(find {{ target_dir }} -maxdepth 1 -mindepth 1 -type d -not -path './current')"
+        count=$(echo "$existings" | wc -l)
+        num_exceeded=$((count - {{ keep }}))
+        if [ "$num_exceeded" -gt 0 ]; then
+          echo "[INFO] Cleaning: removing $num_exceeded insteances..."
+          rm -rf $(echo "$existings" | sort | head -n $num_exceeded)
+          echo "[INFO] Cleaning: done removing"
+        else
+          echo "[INFO] Cleaning: don't need to remove any"
+        fi
+      register: clean_status
+
+    - name: INFO - Server
+      debug:
+        var: server_info.stdout_lines
+    - name: INFO - Nginx
+      debug:
+        var: nginx_status.stdout_lines
+    - name: INFO - Cleaning status
+      debug:
+        var: clean_status.stdout_lines

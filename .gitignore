@@ -6,5 +6,7 @@ jenkins_home/ansible/*
 !jenkins_home/ansible/deploy.yml
 !jenkins_home/ansible/hosts
 !jenkins_home/ansible/workshop1/
+!jenkins_home/ansible/workshop2/
+!jenkins_home/ansible/deploy_workshop2.yml
 
 rockylinux10/remote-key*
